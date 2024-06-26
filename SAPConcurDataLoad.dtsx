@@ -1,0 +1,2075 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/19/2024 11:33:56 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PH12501"
+  DTS:CreatorName="PHM\mahesh.venkatraman"
+  DTS:DTSID="{5C2AF925-6E2D-4DD1-AC30-8BF97C253775}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="3081"
+  DTS:ObjectName="SAPConcurDataLoad"
+  DTS:PackageType="5"
+  DTS:VersionBuild="86"
+  DTS:VersionGUID="{62CD7D2D-0060-4927-BF1D-E36A8F660818}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV Connector]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="CSV Connector"
+      DTS:DTSID="{7468ECB7-62E7-40BD-923E-D97ACD47CFF1}"
+      DTS:ObjectName="CSV Connector">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::Directory_GLData]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3081"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\UHDHDBDV001.phm.gov.au\SAPConcurData\IN\DATA DUMP JULY 2023\Download\23 JULY DOWNLOAD\23 JUL CSAVOCA ESMITH SAP.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Report Name"
+              DTS:DTSID="{45A03E81-F3F7-48DE-8A21-A9C845C350BF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Batch Date"
+              DTS:DTSID="{9C169CAF-A8C9-4D37-8F30-FF052EC9C7BB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Journal Account Code"
+              DTS:DTSID="{D2C3C22C-9069-47D8-884A-BAEB19258FC8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cost Center"
+              DTS:DTSID="{6E6195FE-EF16-42C1-9710-5D08390BA482}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Journal Amount"
+              DTS:DTSID="{7E3747C0-78CD-43BA-8F19-8DF29E54805E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Internal Order"
+              DTS:DTSID="{BED94373-6F5B-48A0-8B6E-FF987186A960}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Project Capital Works"
+              DTS:DTSID="{A6D2A252-8596-4A29-AA69-0420F9F025D2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Report Entry Description"
+              DTS:DTSID="{06998F7C-6BF0-4752-85CE-96EF30B0FF09}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Report Entry Vendor Description"
+              DTS:DTSID="{B04602EB-8150-40F8-89C3-861796F1733B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Employee First Name"
+              DTS:DTSID="{D2C074BD-C40E-4064-A163-C9F27949376D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Employee Last Name"
+              DTS:DTSID="{DA72CE8B-F323-4AEE-9531-F314D20B97CC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Employee ID"
+              DTS:DTSID="{F3C12111-55E2-4769-A6DD-7D2D9DF973DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Report Submit Date"
+              DTS:DTSID="{154457CF-D17B-4652-B7CF-8FFBC402DD5F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Report Entry Vendor Name"
+              DTS:DTSID="{E08A1067-D3CE-4F3E-A83F-31E3711ECE64}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Report Entry Expense Type Name"
+              DTS:DTSID="{A5E0C710-1205-4D28-B857-5D7B6B6803BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Report Entry Transaction Date"
+              DTS:DTSID="{139276D1-6DC5-4941-BFDE-06FDF92B0EE2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Journal Payer Payment Type Name"
+              DTS:DTSID="{AE30FAA4-0094-4E1C-B83F-EF9043E46C7D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Billed Credit Card Account Number"
+              DTS:DTSID="{A8726BC7-D85E-4D82-AC38-D3AD9BA37CA3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tax Authority Label"
+              DTS:DTSID="{4F44F427-29D6-493E-A675-66ECBA172B64}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Report Entry Total Tax Posted Amount"
+              DTS:DTSID="{36C55A8F-C236-4501-83C1-AB3FB33A5FF4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Journal Net of Total Adjusted Tax"
+              DTS:DTSID="{32E51181-6CDD-47FB-AC53-B25E4118C997}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Report ID"
+              DTS:DTSID="{AE70C5F8-CBFF-4579-B404-D87A01DC09A8}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[UHDHDBDV001.phm.gov.au\PHMDATAHUBDEV.SAPConcurx]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E7337D83-2648-4733-BA67-D9A34D21395A}"
+      DTS:ObjectName="UHDHDBDV001.phm.gov.au\PHMDATAHUBDEV.SAPConcurx">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=UHDHDBDV001.phm.gov.au\PHMDATAHUBDEV;Initial Catalog=SAPConcurx;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{E7337D83-2648-4733-BA67-D9A34D21395A}UHDHDBDV001.phm.gov.au\PHMDATAHUBDEV.SAPConcurx;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[UHDHDBDV001\PHMDATAHUBDEV.Logging]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6EE1794D-8A52-4E67-AFF9-5FAFDF27CE18}"
+      DTS:ObjectName="UHDHDBDV001\PHMDATAHUBDEV.Logging">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=UHDHDBDV001\PHMDATAHUBDEV;Initial Catalog=Loggingx;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SAPConcurDataLoad-{6EE1794D-8A52-4E67-AFF9-5FAFDF27CE18}UHDHDBDV001\PHMDATAHUBDEV.Logging;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0B1585C8-9523-4CCF-A87B-335655CF3622}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Directory_GLData">
+      <DTS:VariableValue
+        DTS:DataType="8">\\UHDHDBDV001.phm.gov.au\SAPConcurData\IN\DATA DUMP JULY 2023\Download\23 JULY DOWNLOAD\23 JUL CSAVOCA ESMITH SAP.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C21B9493-8F0E-4FDF-8C2A-CA2F0018B362}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::FolderLocation] +&quot;Archive_&quot;+ (DT_WSTR,4)YEAR(GETDATE()) + &quot;_&quot; + (DT_WSTR,4)MONTH(GETDATE()) + &quot;_&quot; + (DT_WSTR,4)DAY(GETDATE())"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PLDATA_Archive">
+      <DTS:VariableValue
+        DTS:DataType="8">\\UHDHDBDV001.phm.gov.au\SAPConcurData\IN\DATA DUMP JULY 2023\Download\23 JULY DOWNLOADArchive_2024_6_21</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{626A4A83-7007-4A05-80FA-A9C249258094}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceType">
+      <DTS:VariableValue
+        DTS:DataType="8">Excel</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7C7A249C-108D-4D61-AB3F-7AFF352F4476}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Variable">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Load"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{CB63A18C-C8C1-4759-BB77-1333A1A2CE79}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Load">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{69AF1E6B-CB81-4A1F-BDB3-8323724A4D8E}"
+        DTS:ObjectName="{EB3FDBBC-12C2-4B84-8BD1-81098C8E08F8}">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[$Project::FolderLocation]</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="\\UHDHDBDV001.phm.gov.au\SAPConcurData\IN\DATA DUMP JULY 2023\Download\23 JULY DOWNLOAD" />
+            <FEFEProperty
+              FileSpec="*.csv" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Data Load\Archive Directory Creation"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{76C1C162-AEF3-4859-ACA5-7A3CF81274C5}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Archive Directory Creation"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="CreateDirectory"
+              TaskOverwriteDestFile="True"
+              TaskSourcePath="User::PLDATA_Archive"
+              TaskIsSourceVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Data Load\Archive Files After Processing"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{27CE88BD-FDB9-483C-96CB-0E51AF390712}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Archive Files After Processing"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="MoveFile"
+              TaskOverwriteDestFile="True"
+              TaskSourcePath="{7468ECB7-62E7-40BD-923E-D97ACD47CFF1}"
+              TaskDestinationPath="User::PLDATA_Archive"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Data Load\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{94FB7EBB-DAD4-4BB7-885F-F449631AFBF2}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Data Load\Data Flow Task\CSV Data Load"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="3081"
+                  name="CSV Data Load"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Data Load\Data Flow Task\CSV Data Load.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CSV Connector]"
+                      connectionManagerRefId="Package.ConnectionManagers[CSV Connector]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Report Name]"
+                          length="50"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Name]"
+                          name="Report Name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Batch Date]"
+                          dataType="date"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Batch Date]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Batch Date]"
+                          name="Batch Date"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Journal Account Code]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Journal Account Code]"
+                          length="50"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Journal Account Code]"
+                          name="Journal Account Code"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Cost Center]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Cost Center]"
+                          length="50"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Cost Center]"
+                          name="Cost Center"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Journal Amount]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Journal Amount]"
+                          length="50"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Journal Amount]"
+                          name="Journal Amount"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Internal Order]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Internal Order]"
+                          length="50"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Internal Order]"
+                          name="Internal Order"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Project Capital Works]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Project Capital Works]"
+                          length="50"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Project Capital Works]"
+                          name="Project Capital Works"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Entry Description]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Report Entry Description]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Entry Description]"
+                          name="Report Entry Description"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Entry Vendor Description]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Report Entry Vendor Description]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Entry Vendor Description]"
+                          name="Report Entry Vendor Description"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Employee First Name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Employee First Name]"
+                          length="50"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Employee First Name]"
+                          name="Employee First Name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Employee Last Name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Employee Last Name]"
+                          length="50"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Employee Last Name]"
+                          name="Employee Last Name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Employee ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Employee ID]"
+                          length="50"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Employee ID]"
+                          name="Employee ID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Submit Date]"
+                          dataType="date"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Report Submit Date]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Submit Date]"
+                          name="Report Submit Date"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Entry Vendor Name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Report Entry Vendor Name]"
+                          length="50"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Entry Vendor Name]"
+                          name="Report Entry Vendor Name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Entry Expense Type Name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Report Entry Expense Type Name]"
+                          length="50"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Entry Expense Type Name]"
+                          name="Report Entry Expense Type Name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Entry Transaction Date]"
+                          dataType="date"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Report Entry Transaction Date]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Entry Transaction Date]"
+                          name="Report Entry Transaction Date"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Journal Payer Payment Type Name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Journal Payer Payment Type Name]"
+                          length="50"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Journal Payer Payment Type Name]"
+                          name="Journal Payer Payment Type Name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Billed Credit Card Account Number]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Billed Credit Card Account Number]"
+                          length="50"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Billed Credit Card Account Number]"
+                          name="Billed Credit Card Account Number"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Tax Authority Label]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Tax Authority Label]"
+                          length="50"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Tax Authority Label]"
+                          name="Tax Authority Label"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Entry Total Tax Posted Amount]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Report Entry Total Tax Posted Amount]"
+                          length="50"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Entry Total Tax Posted Amount]"
+                          name="Report Entry Total Tax Posted Amount"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Journal Net of Total Adjusted Tax]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Journal Net of Total Adjusted Tax]"
+                          length="50"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Journal Net of Total Adjusted Tax]"
+                          name="Journal Net of Total Adjusted Tax"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Report ID]"
+                          length="50"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report ID]"
+                          name="Report ID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Report Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Report Name" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Batch Date]"
+                          dataType="date"
+                          name="Batch Date" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Journal Account Code]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Journal Account Code" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Cost Center]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Cost Center" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Journal Amount]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Journal Amount" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Internal Order]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Internal Order" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Project Capital Works]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Project Capital Works" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Report Entry Description]"
+                          codePage="1252"
+                          dataType="text"
+                          name="Report Entry Description" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Report Entry Vendor Description]"
+                          codePage="1252"
+                          dataType="text"
+                          name="Report Entry Vendor Description" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Employee First Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Employee First Name" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Employee Last Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Employee Last Name" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Employee ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Employee ID" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Report Submit Date]"
+                          dataType="date"
+                          name="Report Submit Date" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Report Entry Vendor Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Report Entry Vendor Name" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Report Entry Expense Type Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Report Entry Expense Type Name" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Report Entry Transaction Date]"
+                          dataType="date"
+                          name="Report Entry Transaction Date" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Journal Payer Payment Type Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Journal Payer Payment Type Name" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Billed Credit Card Account Number]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Billed Credit Card Account Number" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Tax Authority Label]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Tax Authority Label" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Report Entry Total Tax Posted Amount]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Report Entry Total Tax Posted Amount" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Journal Net of Total Adjusted Tax]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Journal Net of Total Adjusted Tax" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].ExternalColumns[Report ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Report ID" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Data Load\Data Flow Task\Error Handling"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Error Handling"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[SAPConcur_ProcessingErrors]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Data Load\Data Flow Task\Error Handling.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[UHDHDBDV001.phm.gov.au\PHMDATAHUBDEV.SAPConcurx]"
+                      connectionManagerRefId="Package.ConnectionManagers[UHDHDBDV001.phm.gov.au\PHMDATAHUBDEV.SAPConcurx]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Data Load\Data Flow Task\Error Handling.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Error Handling.Inputs[OLE DB Destination Input].Columns[Flat File Source Error Output Column]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="Flat File Source Error Output Column"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Error Handling.Inputs[OLE DB Destination Input].ExternalColumns[Flat File Source Error Output Column]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Error Handling.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
+                          cachedDataType="i4"
+                          cachedName="ErrorCode"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Error Handling.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Error Output].Columns[ErrorCode]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Error Handling.Inputs[OLE DB Destination Input].Columns[ErrorColumn]"
+                          cachedDataType="i4"
+                          cachedName="ErrorColumn"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Error Handling.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Error Output].Columns[ErrorColumn]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Error Handling.Inputs[OLE DB Destination Input].ExternalColumns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          name="Flat File Source Error Output Column" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Error Handling.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
+                          dataType="i4"
+                          name="ErrorCode" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Error Handling.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
+                          codePage="1252"
+                          dataType="text"
+                          name="ErrorColumn" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Data Load\Data Flow Task\Error Handling.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Data Load\Data Flow Task\Error Handling.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Error Handling.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Data Load\Data Flow Task\Error Handling.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Error Handling.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Data Load\Data Flow Task\Error Handling.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Load Download data to SAP Concur"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[SAPConcur_Download]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable">$Project::TblDestination</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">1</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[UHDHDBDV001.phm.gov.au\PHMDATAHUBDEV.SAPConcurx]"
+                      connectionManagerRefId="Package.ConnectionManagers[UHDHDBDV001.phm.gov.au\PHMDATAHUBDEV.SAPConcurx]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].Columns[Report Name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Report Name"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Report Name]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Name]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].Columns[Batch Date]"
+                          cachedDataType="date"
+                          cachedName="Batch Date"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Batch Date]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Batch Date]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].Columns[Journal Account Code]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Journal Account Code"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Journal Account Code]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Journal Account Code]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].Columns[Cost Center]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Cost Center"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Cost Center]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Cost Center]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].Columns[Journal Amount]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Journal Amount"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Journal Amount]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Journal Amount]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].Columns[Internal Order]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Internal Order"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Internal Order]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Internal Order]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].Columns[Project Capital Works]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Project Capital Works"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Project Capital Works]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Project Capital Works]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].Columns[Report Entry Description]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="Report Entry Description"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Report Entry Description]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Entry Description]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].Columns[Report Entry Vendor Description]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="Report Entry Vendor Description"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Report Entry Vendor Description]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Entry Vendor Description]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].Columns[Employee First Name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Employee First Name"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Employee First Name]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Employee First Name]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].Columns[Employee Last Name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Employee Last Name"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Employee Last Name]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Employee Last Name]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].Columns[Report Submit Date]"
+                          cachedDataType="date"
+                          cachedName="Report Submit Date"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Report Submit Date]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Submit Date]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].Columns[Report Entry Vendor Name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Report Entry Vendor Name"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Report Entry Vendor Name]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Entry Vendor Name]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].Columns[Report Entry Expense Type Name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Report Entry Expense Type Name"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Report Entry Expense Type Name]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Entry Expense Type Name]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].Columns[Report Entry Transaction Date]"
+                          cachedDataType="date"
+                          cachedName="Report Entry Transaction Date"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Report Entry Transaction Date]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Entry Transaction Date]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].Columns[Journal Payer Payment Type Name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Journal Payer Payment Type Name"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Journal Payer Payment Type Name]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Journal Payer Payment Type Name]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].Columns[Billed Credit Card Account Number]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Billed Credit Card Account Number"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Billed Credit Card Account Number]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Billed Credit Card Account Number]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].Columns[Tax Authority Label]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Tax Authority Label"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Tax Authority Label]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Tax Authority Label]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].Columns[Report Entry Total Tax Posted Amount]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Report Entry Total Tax Posted Amount"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Report Entry Total Tax Posted Amount]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report Entry Total Tax Posted Amount]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].Columns[Journal Net of Total Adjusted Tax]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Journal Net of Total Adjusted Tax"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Journal Net of Total Adjusted Tax]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Journal Net of Total Adjusted Tax]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].Columns[Report ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Report ID"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Report ID]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Report ID]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].Columns[Employee ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Employee ID"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Employee Email ID]"
+                          lineageId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output].Columns[Employee ID]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Report Name]"
+                          codePage="1252"
+                          dataType="text"
+                          name="Report Name" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Batch Date]"
+                          dataType="dbDate"
+                          name="Batch Date" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Journal Account Code]"
+                          codePage="1252"
+                          dataType="text"
+                          name="Journal Account Code" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Cost Center]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Cost Center" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Journal Amount]"
+                          dataType="numeric"
+                          name="Journal Amount"
+                          precision="18"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Internal Order]"
+                          codePage="1252"
+                          dataType="text"
+                          name="Internal Order" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Project Capital Works]"
+                          codePage="1252"
+                          dataType="text"
+                          name="Project Capital Works" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Report Entry Description]"
+                          codePage="1252"
+                          dataType="text"
+                          name="Report Entry Description" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Report Entry Vendor Description]"
+                          codePage="1252"
+                          dataType="text"
+                          name="Report Entry Vendor Description" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Employee First Name]"
+                          codePage="1252"
+                          dataType="text"
+                          name="Employee First Name" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Employee Last Name]"
+                          codePage="1252"
+                          dataType="text"
+                          name="Employee Last Name" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Employee Email ID]"
+                          codePage="1252"
+                          dataType="text"
+                          name="Employee Email ID" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Report Submit Date]"
+                          dataType="dbDate"
+                          name="Report Submit Date" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Report Entry Vendor Name]"
+                          codePage="1252"
+                          dataType="text"
+                          name="Report Entry Vendor Name" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Report Entry Expense Type Name]"
+                          codePage="1252"
+                          dataType="text"
+                          name="Report Entry Expense Type Name" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Report Entry Transaction Date]"
+                          dataType="dbDate"
+                          name="Report Entry Transaction Date" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Journal Payer Payment Type Name]"
+                          codePage="1252"
+                          dataType="text"
+                          name="Journal Payer Payment Type Name" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Billed Credit Card Account Number]"
+                          codePage="1252"
+                          dataType="text"
+                          name="Billed Credit Card Account Number" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Tax Authority Label]"
+                          codePage="1252"
+                          dataType="text"
+                          name="Tax Authority Label" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Report Entry Total Tax Posted Amount]"
+                          dataType="numeric"
+                          name="Report Entry Total Tax Posted Amount"
+                          precision="18"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Journal Net of Total Adjusted Tax]"
+                          dataType="numeric"
+                          name="Journal Net of Total Adjusted Tax"
+                          precision="18"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input].ExternalColumns[Report ID]"
+                          codePage="1252"
+                          dataType="text"
+                          name="Report ID" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Data Load\Data Flow Task\Row Count"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::Variable</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Data Load\Data Flow Task\Row Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Data Load\Data Flow Task\Row Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Data Load\Data Flow Task\Row Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Data Load\Data Flow Task.Paths[Flat File Source Error Output]"
+                  endId="Package\Data Load\Data Flow Task\Error Handling.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Error Output"
+                  startId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Error Output]" />
+                <path
+                  refId="Package\Data Load\Data Flow Task.Paths[Flat File Source Output]"
+                  endId="Package\Data Load\Data Flow Task\Row Count.Inputs[Row Count Input 1]"
+                  name="Flat File Source Output"
+                  startId="Package\Data Load\Data Flow Task\CSV Data Load.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Data Load\Data Flow Task.Paths[Row Count Output 1]"
+                  endId="Package\Data Load\Data Flow Task\Load Download data to SAP Concur.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Data Load\Data Flow Task\Row Count.Outputs[Row Count Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Data Load\ETL Logging Process Complete"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{4D164675-2162-4ED6-AD88-5659CB4B5359}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ETL Logging Process Complete"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{6EE1794D-8A52-4E67-AFF9-5FAFDF27CE18}"
+              SQLTask:SqlStatementSource="exec [ETLLog_Update] ?,?,?,?,?,?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="package_name"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="255" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="SourceType"
+                SQLTask:DtsVariableName="User::SourceType"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="255" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="souce_file_name"
+                SQLTask:DtsVariableName="$Project::SourceFileName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="1000" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="error_tbl"
+                SQLTask:DtsVariableName="$Project::TblErrors"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="target_table_name"
+                SQLTask:DtsVariableName="$Project::TblDestination"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="record_inserted"
+                SQLTask:DtsVariableName="User::Variable"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Data Load\ETL Logging Process Start"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{FFC5C407-C0E7-4E81-B3BB-3B4D55DFA74A}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ETL Logging Process Start"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{6EE1794D-8A52-4E67-AFF9-5FAFDF27CE18}"
+              SQLTask:SqlStatementSource="EXECUTE [dbo].[ETLLog_Insert] ?, ?, ?, ?,?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="package_name"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="255" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="SourceType "
+                SQLTask:DtsVariableName="User::SourceType"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="255" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="souce_file_name"
+                SQLTask:DtsVariableName="$Project::SourceFileName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="1000" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="target_table_name"
+                SQLTask:DtsVariableName="$Project::TblDestination"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="255" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="target_database"
+                SQLTask:DtsVariableName="$Project::Targetdb"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Data Load.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{3C8F85A6-F22B-4A50-92BC-BBDE7AF173C1}"
+          DTS:From="Package\Data Load\ETL Logging Process Start"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Data Load\Data Flow Task" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Data Load.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{3BA6AA8E-A699-4301-9977-08532ED14F47}"
+          DTS:From="Package\Data Load\Data Flow Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Data Load\Archive Directory Creation" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Data Load.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{2CA72644-A25A-4CDD-8D44-1C31484952C9}"
+          DTS:From="Package\Data Load\Archive Directory Creation"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Data Load\Archive Files After Processing" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Data Load.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{114671C4-4D58-473B-86B1-34FB99F26B40}"
+          DTS:From="Package\Data Load\Archive Files After Processing"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Data Load\ETL Logging Process Complete" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{218B42CE-65D3-419A-9709-8D5A51CE78CC}"
+          DTS:ObjectName="{218B42CE-65D3-419A-9709-8D5A51CE78CC}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::Directory_GLData" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="204,42.6666666666667"
+          Id="Package\Data Load\Archive Directory Creation"
+          TopLeft="64.3333103110398,258.877187182809" />
+        <NodeLayout
+          Size="221.333333333334,42.6666666666667"
+          Id="Package\Data Load\Archive Files After Processing"
+          TopLeft="136.666640738647,413.70174937513" />
+        <NodeLayout
+          Size="153.333333333334,42.6666666666667"
+          Id="Package\Data Load\Data Flow Task"
+          TopLeft="81.6666583965228,113.403504174283" />
+        <NodeLayout
+          Size="230.666666666667,42.6666666666667"
+          Id="Package\Data Load\ETL Logging Process Complete"
+          TopLeft="192.291638252016,482.754379361428" />
+        <NodeLayout
+          Size="206.666666666667,42.6666666666667"
+          Id="Package\Data Load\ETL Logging Process Start"
+          TopLeft="46.3749828170986,29.5964891170586" />
+        <EdgeLayout
+          Id="Package\Data Load.PrecedenceConstraints[Constraint]"
+          TopLeft="149.708316150432,72.2631557837253">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.62500891275755,41.1403483905572"
+              Start="0,0"
+              End="8.62500891275755,33.6403483905572">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5701741952786" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5701741952786"
+                    Point2="0,20.5701741952786"
+                    Point3="4,20.5701741952786" />
+                  <mssgle:LineSegment
+                    End="4.62500891275755,20.5701741952786" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.62500891275755,20.5701741952786"
+                    Point2="8.62500891275755,20.5701741952786"
+                    Point3="8.62500891275755,24.5701741952786" />
+                  <mssgle:LineSegment
+                    End="8.62500891275755,33.6403483905572" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Load.PrecedenceConstraints[Constraint 1]"
+          TopLeft="162.333317687115,156.07017084095">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,102.807016341859"
+              Start="0,0"
+              End="0,95.3070163418594">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,95.3070163418594" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Load.PrecedenceConstraints[Constraint 2]"
+          TopLeft="166.33331031104,301.543853849476">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="80.999997094274,112.157895525654"
+              Start="0,0"
+              End="80.999997094274,104.657895525654">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.0789477628271" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.0789477628271"
+                    Point2="0,56.0789477628271"
+                    Point3="4,56.0789477628271" />
+                  <mssgle:LineSegment
+                    End="76.999997094274,56.0789477628271" />
+                  <mssgle:CubicBezierSegment
+                    Point1="76.999997094274,56.0789477628271"
+                    Point2="80.999997094274,56.0789477628271"
+                    Point3="80.999997094274,60.0789477628271" />
+                  <mssgle:LineSegment
+                    End="80.999997094274,104.657895525654" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Load.PrecedenceConstraints[Constraint 3]"
+          TopLeft="247.333307405314,456.368416041797">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60.2916641800354,26.3859633196315"
+              Start="0,0"
+              End="60.2916641800354,18.8859633196315">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.19298165981573" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.19298165981573"
+                    Point2="0,13.1929816598157"
+                    Point3="4,13.1929816598157" />
+                  <mssgle:LineSegment
+                    End="56.2916641800354,13.1929816598157" />
+                  <mssgle:CubicBezierSegment
+                    Point1="56.2916641800354,13.1929816598157"
+                    Point2="60.2916641800354,13.1929816598157"
+                    Point3="60.2916641800354,17.1929816598157" />
+                  <mssgle:LineSegment
+                    End="60.2916641800354,18.8859633196315" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="428,580.666666666667"
+          Size="428,624"
+          Id="Package\Data Load"
+          TopLeft="443.625017406418,152.228068935877" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Load\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="148,42.6666666666667"
+          Id="Package\Data Load\Data Flow Task\Error Handling"
+          TopLeft="205.624990807846,43.7894732034107" />
+        <NodeLayout
+          Size="153.333333333334,42.6666666666667"
+          Id="Package\Data Load\Data Flow Task\CSV Data Load"
+          TopLeft="7.99999988824123,5.5" />
+        <EdgeLayout
+          Id="Package\Data Load\Data Flow Task.Paths[Flat File Source Error Output]"
+          TopLeft="161.333333221575,26.8333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="44.2916575862714,38.2894732034107"
+              Start="0,0"
+              End="36.7916575862714,38.2894732034107">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.1458287931357,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.1458287931357,0"
+                    Point2="22.1458287931357,0"
+                    Point3="22.1458287931357,4" />
+                  <mssgle:LineSegment
+                    End="22.1458287931357,34.2894732034107" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.1458287931357,34.2894732034107"
+                    Point2="22.1458287931357,38.2894732034107"
+                    Point3="26.1458287931357,38.2894732034107" />
+                  <mssgle:LineSegment
+                    End="36.7916575862714,38.2894732034107" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-41.4805579256143,-17.609375,127.2527734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\Data Load\Data Flow Task\Row Count"
+          TopLeft="149.249993573874,250.456138728178" />
+        <EdgeLayout
+          Id="Package\Data Load\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="84.6666665549079,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="130.583327018966,202.289472061512"
+              Start="0,0"
+              End="130.583327018966,194.789472061512">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,97.1447360307558" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,97.1447360307558"
+                    Point2="0,101.144736030756"
+                    Point3="4,101.144736030756" />
+                  <mssgle:LineSegment
+                    End="126.583327018966,101.144736030756" />
+                  <mssgle:CubicBezierSegment
+                    Point1="126.583327018966,101.144736030756"
+                    Point2="130.583327018966,101.144736030756"
+                    Point3="130.583327018966,105.144736030756" />
+                  <mssgle:LineSegment
+                    End="130.583327018966,194.789472061512" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="250.666666666667,42.6666666666667"
+          Id="Package\Data Load\Data Flow Task\Load Download data to SAP Concur"
+          TopLeft="150.499993517995,366.122805252108" />
+        <EdgeLayout
+          Id="Package\Data Load\Data Flow Task.Paths[Row Count Output 1]"
+          TopLeft="215.249993573874,293.122805394845">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60.583333277454,72.9999998572625"
+              Start="0,0"
+              End="60.583333277454,65.4999998572625">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.4999999286313" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.4999999286313"
+                    Point2="0,36.4999999286313"
+                    Point3="4,36.4999999286313" />
+                  <mssgle:LineSegment
+                    End="56.583333277454,36.4999999286313" />
+                  <mssgle:CubicBezierSegment
+                    Point1="56.583333277454,36.4999999286313"
+                    Point2="60.583333277454,36.4999999286313"
+                    Point3="60.583333277454,40.4999999286313" />
+                  <mssgle:LineSegment
+                    End="60.583333277454,65.4999998572625" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Load\Data Flow Task\Error Handling">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

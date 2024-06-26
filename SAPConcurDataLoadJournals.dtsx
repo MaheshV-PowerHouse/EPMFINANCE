@@ -1,0 +1,1703 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/19/2024 11:33:56 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PH12501"
+  DTS:CreatorName="PHM\mahesh.venkatraman"
+  DTS:DTSID="{F010AACA-EDE9-411C-AA7C-4DAF55CBBCD5}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="3081"
+  DTS:ObjectName="SAPConcurDataLoadJournals"
+  DTS:PackageType="5"
+  DTS:VersionBuild="114"
+  DTS:VersionGUID="{CDE52ACC-D2C9-4F20-A9AD-E79D9472541E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV Connector]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="CSV Connector"
+      DTS:DTSID="{C369DE4A-ECF8-4B3E-80F6-9F5E1805CAAD}"
+      DTS:ObjectName="CSV Connector">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::Directory_GLData]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3081"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\UHDHDBDV001.phm.gov.au\SAPConcurData\IN\DATA DUMP JULY 2023\Journal\23 JULY JOURNAL\23 JULY PCRD FNICOLAS.xlsx">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Report Name"
+              DTS:DTSID="{44565D0D-2955-44F3-AF14-1C48B6BC31E0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Batch Date"
+              DTS:DTSID="{937DC11C-6EDA-4831-91B0-D1817234DDB6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Journal Account Code"
+              DTS:DTSID="{D9686A15-50E7-48FC-B425-671002DF4FD0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cost Center"
+              DTS:DTSID="{D2CDD969-3C38-411A-A89E-DAA22ABE4B53}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Journal Amount"
+              DTS:DTSID="{2847B3F9-10E2-479E-9DE3-838684A267A1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Internal Order"
+              DTS:DTSID="{6378BAF6-0D10-4AD2-B139-3AAA59EC4397}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Project Capital Works"
+              DTS:DTSID="{46582F4E-6702-47C3-A3C4-98913357FC39}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Report Entry Description"
+              DTS:DTSID="{5FCA72DF-3B6E-4234-9EB6-9AAC9D6DA2C6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Report Entry Vendor Description"
+              DTS:DTSID="{FA82F57A-908C-4A02-935F-6A5B9DA8BD5A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Employee First Name"
+              DTS:DTSID="{3A2D097C-96ED-4C2E-A073-152EFCCACCFB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Employee Last Name"
+              DTS:DTSID="{A4AEB7EB-686F-492F-81C2-098FB7B3A37B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Employee ID"
+              DTS:DTSID="{EABC56E1-5A3E-4C66-B8B0-1E7A0FBD235E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Report Submit Date"
+              DTS:DTSID="{90EEA372-2390-49C0-B4A2-746D5DDCC862}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Report Entry Vendor Name"
+              DTS:DTSID="{436174B7-2651-46E9-88BD-1975C659B88D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Report Entry Expense Type Name"
+              DTS:DTSID="{B439DC5D-2663-46DC-A769-61FB0F297C08}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Report Entry Transaction Date"
+              DTS:DTSID="{75AC82D5-F953-43A6-9325-146202FDD825}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Journal Payer Payment Type Name"
+              DTS:DTSID="{F20BEFFE-1156-476F-ABF8-8204F2D95C46}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Billed Credit Card Account Number"
+              DTS:DTSID="{42C9CE63-9123-46D8-8D97-AC87C27C6EA1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tax Authority Label"
+              DTS:DTSID="{5C9AE2FC-1A78-4B3A-9CA6-E680BB2B68AB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Report Entry Total Tax Posted Amount"
+              DTS:DTSID="{55C8022A-8010-4219-AC81-26555762CB03}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Journal Net of Total Adjusted Tax"
+              DTS:DTSID="{819BAE46-CD7B-41BB-ADD5-3F33D7BC2C21}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Report ID"
+              DTS:DTSID="{6ED751B0-EC0C-43AD-BAAB-8A21CD1B92FE}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{2F007AAB-A9CC-4D85-805A-37B630771861}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ExcelFilePath">@[User::Directory_GLData]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\UHDHDBDV001.phm.gov.au\SAPConcurData\IN\DATA DUMP JULY 2023\Journal\23 JULY JOURNAL\23 JULY PCRD FNICOLAS.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[UHDHDBDV001.phm.gov.au\PHMDATAHUBDEV.SAPConcurx]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4F4A3564-D2E5-410C-8F06-4F558C5BFFFC}"
+      DTS:ObjectName="UHDHDBDV001.phm.gov.au\PHMDATAHUBDEV.SAPConcurx">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=UHDHDBDV001.phm.gov.au\PHMDATAHUBDEV;Initial Catalog=SAPConcurx;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{4F4A3564-D2E5-410C-8F06-4F558C5BFFFC}UHDHDBDV001.phm.gov.au\PHMDATAHUBDEV.SAPConcurx;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[UHDHDBDV001\PHMDATAHUBDEV.Logging]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{598FF3BC-EA95-4609-B64C-DE7CC0A0A90D}"
+      DTS:ObjectName="UHDHDBDV001\PHMDATAHUBDEV.Logging">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=UHDHDBDV001\PHMDATAHUBDEV;Initial Catalog=Loggingx;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SAPConcurDataLoad-{598FF3BC-EA95-4609-B64C-DE7CC0A0A90D}UHDHDBDV001\PHMDATAHUBDEV.Logging;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{09E2D885-A70D-40C5-8E73-96F7432506A7}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Directory_GLData">
+      <DTS:VariableValue
+        DTS:DataType="8">\\UHDHDBDV001.phm.gov.au\SAPConcurData\IN\DATA DUMP JULY 2023\Journal\23 JULY JOURNAL\23 JULY PCRD FNICOLAS.xlsx</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F5AF5691-CC10-450E-A5B9-51A1086F780B}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::FolderLocation] +&quot;Archive_&quot;+ (DT_WSTR,4)YEAR(GETDATE()) + &quot;_&quot; + (DT_WSTR,4)MONTH(GETDATE()) + &quot;_&quot; + (DT_WSTR,4)DAY(GETDATE())"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PLDATA_Archive">
+      <DTS:VariableValue
+        DTS:DataType="8">\\UHDHDBDV001.phm.gov.au\SAPConcurData\IN\DATA DUMP JULY 2023\Journal\23 JULY JOURNALArchive_2024_6_21</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{612F07CB-84A7-42BD-A3E5-29148CDC9580}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceType">
+      <DTS:VariableValue
+        DTS:DataType="8">Excel</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5009955C-772C-4E1B-B662-9FE6918D0C96}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Variable">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Load"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{86383C9D-3065-4FB7-9179-815D11EF3981}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Load">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{B01AF67A-94D6-40B3-9664-96CEC4BABBF3}"
+        DTS:ObjectName="{EB3FDBBC-12C2-4B84-8BD1-81098C8E08F8}">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[$Project::FolderLocation]</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="\\UHDHDBDV001.phm.gov.au\SAPConcurData\IN\DATA DUMP JULY 2023\Journal\23 JULY JOURNAL" />
+            <FEFEProperty
+              FileSpec="*.xlsx" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Data Load\Archive Directory Creation"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{592589A5-8455-4774-AC7F-9EB2C30C6087}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Archive Directory Creation"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="CreateDirectory"
+              TaskOverwriteDestFile="True"
+              TaskSourcePath="User::PLDATA_Archive"
+              TaskIsSourceVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Data Load\Archive Files After Processing"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{8108DCF6-782A-4452-ABDA-CC8C9725BE7E}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Archive Files After Processing"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="MoveFile"
+              TaskOverwriteDestFile="True"
+              TaskSourcePath="{C369DE4A-ECF8-4B3E-80F6-9F5E1805CAAD}"
+              TaskDestinationPath="User::PLDATA_Archive"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Data Load\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{1773821A-7952-4955-A4C5-9C855D50703D}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Data Load\Data Flow Task\Excel Source"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Excel Source"
+                  name="Excel Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">Journal$A02:U5000</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mapping from parameters in the SQL command to variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Data Load\Data Flow Task\Excel Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output]"
+                      name="Excel Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Header]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Header]"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Header]"
+                          name="Header"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Ref No]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Ref No]"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Ref No]"
+                          name="Ref No"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Co Code]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Co Code]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Co Code]"
+                          name="Co Code"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Post date]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Post date]"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Post date]"
+                          name="Post date"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Doc date]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Doc date]"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Doc date]"
+                          name="Doc date"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Doc type]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Doc type]"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Doc type]"
+                          name="Doc type"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Header text]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Header text]"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Header text]"
+                          name="Header text"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Currency]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Currency]"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Currency]"
+                          name="Currency"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[PK]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[PK]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[PK]"
+                          name="PK"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Account]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Account]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Account]"
+                          name="Account"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[New Company Code]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[New Company Code]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[New Company Code]"
+                          name="New Company Code"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Cost ctr]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Cost ctr]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Cost ctr]"
+                          name="Cost ctr"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Profit center]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Profit center]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Profit center]"
+                          name="Profit center"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Tax code]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tax code]"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Tax code]"
+                          name="Tax code"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[AMOUNT]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[AMOUNT]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[AMOUNT]"
+                          name="AMOUNT"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Assignment]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Assignment]"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Assignment]"
+                          name="Assignment"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Order]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Order]"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Order]"
+                          name="Order"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[WBS Element]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[WBS Element]"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[WBS Element]"
+                          name="WBS Element"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Description]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Description]"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Description]"
+                          name="Description"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[House Bank]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[House Bank]"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[House Bank]"
+                          name="House Bank"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[House Bank ID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[House Bank ID]"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[House Bank ID]"
+                          name="House Bank ID"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Header]"
+                          dataType="wstr"
+                          length="255"
+                          name="Header" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Ref No]"
+                          dataType="wstr"
+                          length="255"
+                          name="Ref No" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Co Code]"
+                          dataType="r8"
+                          name="Co Code" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Post date]"
+                          dataType="wstr"
+                          length="255"
+                          name="Post date" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Doc date]"
+                          dataType="wstr"
+                          length="255"
+                          name="Doc date" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Doc type]"
+                          dataType="wstr"
+                          length="255"
+                          name="Doc type" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Header text]"
+                          dataType="wstr"
+                          length="255"
+                          name="Header text" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Currency]"
+                          dataType="wstr"
+                          length="255"
+                          name="Currency" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[PK]"
+                          dataType="r8"
+                          name="PK" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Account]"
+                          dataType="r8"
+                          name="Account" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[New Company Code]"
+                          dataType="r8"
+                          name="New Company Code" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Cost ctr]"
+                          dataType="r8"
+                          name="Cost ctr" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Profit center]"
+                          dataType="r8"
+                          name="Profit center" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tax code]"
+                          dataType="wstr"
+                          length="255"
+                          name="Tax code" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[AMOUNT]"
+                          dataType="r8"
+                          name="AMOUNT" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Assignment]"
+                          dataType="wstr"
+                          length="255"
+                          name="Assignment" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Order]"
+                          dataType="wstr"
+                          length="255"
+                          name="Order" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[WBS Element]"
+                          dataType="wstr"
+                          length="255"
+                          name="WBS Element" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Description]"
+                          dataType="wstr"
+                          length="255"
+                          name="Description" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[House Bank]"
+                          dataType="wstr"
+                          length="255"
+                          name="House Bank" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[House Bank ID]"
+                          dataType="wstr"
+                          length="255"
+                          name="House Bank ID" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output]"
+                      isErrorOut="true"
+                      name="Excel Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Header]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Header]"
+                          name="Header" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Ref No]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Ref No]"
+                          name="Ref No" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Co Code]"
+                          dataType="r8"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Co Code]"
+                          name="Co Code" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Post date]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Post date]"
+                          name="Post date" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Doc date]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Doc date]"
+                          name="Doc date" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Doc type]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Doc type]"
+                          name="Doc type" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Header text]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Header text]"
+                          name="Header text" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Currency]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Currency]"
+                          name="Currency" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[PK]"
+                          dataType="r8"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[PK]"
+                          name="PK" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Account]"
+                          dataType="r8"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Account]"
+                          name="Account" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[New Company Code]"
+                          dataType="r8"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[New Company Code]"
+                          name="New Company Code" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Cost ctr]"
+                          dataType="r8"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Cost ctr]"
+                          name="Cost ctr" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Profit center]"
+                          dataType="r8"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Profit center]"
+                          name="Profit center" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Tax code]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Tax code]"
+                          name="Tax code" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[AMOUNT]"
+                          dataType="r8"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[AMOUNT]"
+                          name="AMOUNT" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Assignment]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Assignment]"
+                          name="Assignment" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Order]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Order]"
+                          name="Order" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[WBS Element]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[WBS Element]"
+                          name="WBS Element" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Description]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Description]"
+                          name="Description" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[House Bank]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[House Bank]"
+                          name="House Bank" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[House Bank ID]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[House Bank ID]"
+                          name="House Bank ID" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Data Load\Data Flow Task\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[SAPConcur_Download]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable">$Project::TblDestination</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">1</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Data Load\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[UHDHDBDV001.phm.gov.au\PHMDATAHUBDEV.SAPConcurx]"
+                      connectionManagerRefId="Package.ConnectionManagers[UHDHDBDV001.phm.gov.au\PHMDATAHUBDEV.SAPConcurx]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Header]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Header"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Header]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Header]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Ref No]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Ref No"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ref No]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Ref No]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Co Code]"
+                          cachedDataType="r8"
+                          cachedName="Co Code"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Co Code]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Co Code]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Post date]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Post date"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Post date]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Post date]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Doc date]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Doc date"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Doc date]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Doc date]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Doc type]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Doc type"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Doc type]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Doc type]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Header text]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Header text"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Header text]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Header text]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Currency]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Currency"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Currency]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Currency]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PK]"
+                          cachedDataType="r8"
+                          cachedName="PK"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PK]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[PK]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Account]"
+                          cachedDataType="r8"
+                          cachedName="Account"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Account]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Account]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[New Company Code]"
+                          cachedDataType="r8"
+                          cachedName="New Company Code"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[New Company Code]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[New Company Code]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Profit center]"
+                          cachedDataType="r8"
+                          cachedName="Profit center"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Profit center]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Profit center]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tax code]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Tax code"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tax code]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Tax code]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AMOUNT]"
+                          cachedDataType="r8"
+                          cachedName="AMOUNT"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AMOUNT]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[AMOUNT]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Assignment]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Assignment"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Assignment]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Assignment]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Order]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Order"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Order]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Order]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[WBS Element]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="WBS Element"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WBS Element]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[WBS Element]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Description]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Description"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Description]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[House Bank]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="House Bank"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[House Bank]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[House Bank]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[House Bank ID]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="House Bank ID"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[House Bank ID]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[House Bank ID]" />
+                        <inputColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cost ctr]"
+                          cachedDataType="r8"
+                          cachedName="Cost ctr"
+                          externalMetadataColumnId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cost center]"
+                          lineageId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Cost ctr]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Header]"
+                          dataType="wstr"
+                          length="255"
+                          name="Header" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ref No]"
+                          dataType="wstr"
+                          length="255"
+                          name="Ref No" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Co Code]"
+                          dataType="r8"
+                          name="Co Code" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Post date]"
+                          dataType="wstr"
+                          length="255"
+                          name="Post date" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Doc date]"
+                          dataType="wstr"
+                          length="255"
+                          name="Doc date" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Doc type]"
+                          dataType="wstr"
+                          length="255"
+                          name="Doc type" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Header text]"
+                          dataType="wstr"
+                          length="255"
+                          name="Header text" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Currency]"
+                          dataType="wstr"
+                          length="255"
+                          name="Currency" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PK]"
+                          dataType="i8"
+                          name="PK" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Account]"
+                          codePage="1252"
+                          dataType="text"
+                          name="Account" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[New Company Code]"
+                          dataType="wstr"
+                          length="50"
+                          name="New Company Code" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cost center]"
+                          dataType="wstr"
+                          length="50"
+                          name="Cost center" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Profit center]"
+                          dataType="wstr"
+                          length="50"
+                          name="Profit center" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tax code]"
+                          dataType="wstr"
+                          length="255"
+                          name="Tax code" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AMOUNT]"
+                          dataType="numeric"
+                          name="AMOUNT"
+                          precision="18"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Assignment]"
+                          dataType="wstr"
+                          length="255"
+                          name="Assignment" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Order]"
+                          dataType="wstr"
+                          length="255"
+                          name="Order" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WBS Element]"
+                          dataType="wstr"
+                          length="255"
+                          name="WBS Element" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                          dataType="nText"
+                          name="Description" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[House Bank]"
+                          dataType="wstr"
+                          length="255"
+                          name="House Bank" />
+                        <externalMetadataColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[House Bank ID]"
+                          dataType="wstr"
+                          length="255"
+                          name="House Bank ID" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Data Load\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Data Load\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Data Load\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Data Load\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Data Load\Data Flow Task\Row Count"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::Variable</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Data Load\Data Flow Task\Row Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Data Load\Data Flow Task\Row Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Data Load\Data Flow Task\Row Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Data Load\Data Flow Task.Paths[Excel Source Output]"
+                  endId="Package\Data Load\Data Flow Task\Row Count.Inputs[Row Count Input 1]"
+                  name="Excel Source Output"
+                  startId="Package\Data Load\Data Flow Task\Excel Source.Outputs[Excel Source Output]" />
+                <path
+                  refId="Package\Data Load\Data Flow Task.Paths[Row Count Output 1]"
+                  endId="Package\Data Load\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Data Load\Data Flow Task\Row Count.Outputs[Row Count Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Data Load\ETL Logging Process Complete"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{7DECB1F4-58D5-44F5-A741-7B6092D73FD3}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ETL Logging Process Complete"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{598FF3BC-EA95-4609-B64C-DE7CC0A0A90D}"
+              SQLTask:SqlStatementSource="exec [ETLLog_Update] ?,?,?,?,?,?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="package_name"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="255" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="SourceType"
+                SQLTask:DtsVariableName="User::SourceType"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="255" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="souce_file_name"
+                SQLTask:DtsVariableName="$Project::SourceFileName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="1000" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="error_tbl"
+                SQLTask:DtsVariableName="$Project::TblErrors"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="target_table_name"
+                SQLTask:DtsVariableName="$Project::TblDestination"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="record_inserted"
+                SQLTask:DtsVariableName="User::Variable"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Data Load\ETL Logging Process Start"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{5137CC1F-1FB4-448A-AF0B-2782AD366F9A}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ETL Logging Process Start"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{598FF3BC-EA95-4609-B64C-DE7CC0A0A90D}"
+              SQLTask:SqlStatementSource="EXECUTE [dbo].[ETLLog_Insert] ?, ?, ?, ?,?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="package_name"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="255" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="SourceType "
+                SQLTask:DtsVariableName="User::SourceType"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="255" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="souce_file_name"
+                SQLTask:DtsVariableName="$Project::SourceFileName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="1000" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="target_table_name"
+                SQLTask:DtsVariableName="$Project::TblDestination"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="255" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="target_database"
+                SQLTask:DtsVariableName="$Project::Targetdb"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Data Load.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{1A37AEC8-B7BA-4D82-8202-0EA65403A97C}"
+          DTS:From="Package\Data Load\ETL Logging Process Start"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Data Load\Data Flow Task" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Data Load.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{53BE5383-B4F7-43BD-A146-90DFAC4252B1}"
+          DTS:From="Package\Data Load\Data Flow Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Data Load\Archive Directory Creation" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Data Load.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{6E5F4370-8B07-48B1-B1C2-409D08794D72}"
+          DTS:From="Package\Data Load\Archive Directory Creation"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Data Load\Archive Files After Processing" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Data Load.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{09A17588-80C7-48C3-B5F8-E20C3E5AC795}"
+          DTS:From="Package\Data Load\Archive Files After Processing"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Data Load\ETL Logging Process Complete" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{C0E497C6-DDE5-46D9-B1C5-9AE932F36112}"
+          DTS:ObjectName="{C0E497C6-DDE5-46D9-B1C5-9AE932F36112}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::Directory_GLData" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="204,42.6666666666667"
+          Id="Package\Data Load\Archive Directory Creation"
+          TopLeft="64.3333103110398,258.877187182809" />
+        <NodeLayout
+          Size="221.333333333334,42.6666666666667"
+          Id="Package\Data Load\Archive Files After Processing"
+          TopLeft="136.666640738647,413.70174937513" />
+        <NodeLayout
+          Size="153.333333333334,42.6666666666667"
+          Id="Package\Data Load\Data Flow Task"
+          TopLeft="81.6666583965228,113.403504174283" />
+        <NodeLayout
+          Size="230.666666666667,42.6666666666667"
+          Id="Package\Data Load\ETL Logging Process Complete"
+          TopLeft="192.291638252016,482.754379361428" />
+        <NodeLayout
+          Size="206.666666666667,42.6666666666667"
+          Id="Package\Data Load\ETL Logging Process Start"
+          TopLeft="46.3749828170986,29.5964891170586" />
+        <EdgeLayout
+          Id="Package\Data Load.PrecedenceConstraints[Constraint]"
+          TopLeft="149.708316150432,72.2631557837253">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.62500891275755,41.1403483905572"
+              Start="0,0"
+              End="8.62500891275755,33.6403483905572">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5701741952786" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5701741952786"
+                    Point2="0,20.5701741952786"
+                    Point3="4,20.5701741952786" />
+                  <mssgle:LineSegment
+                    End="4.62500891275755,20.5701741952786" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.62500891275755,20.5701741952786"
+                    Point2="8.62500891275755,20.5701741952786"
+                    Point3="8.62500891275755,24.5701741952786" />
+                  <mssgle:LineSegment
+                    End="8.62500891275755,33.6403483905572" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Load.PrecedenceConstraints[Constraint 1]"
+          TopLeft="162.333317687115,156.07017084095">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,102.807016341859"
+              Start="0,0"
+              End="0,95.3070163418594">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,95.3070163418594" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Load.PrecedenceConstraints[Constraint 2]"
+          TopLeft="166.33331031104,301.543853849476">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="80.999997094274,112.157895525654"
+              Start="0,0"
+              End="80.999997094274,104.657895525654">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.0789477628271" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.0789477628271"
+                    Point2="0,56.0789477628271"
+                    Point3="4,56.0789477628271" />
+                  <mssgle:LineSegment
+                    End="76.999997094274,56.0789477628271" />
+                  <mssgle:CubicBezierSegment
+                    Point1="76.999997094274,56.0789477628271"
+                    Point2="80.999997094274,56.0789477628271"
+                    Point3="80.999997094274,60.0789477628271" />
+                  <mssgle:LineSegment
+                    End="80.999997094274,104.657895525654" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Load.PrecedenceConstraints[Constraint 3]"
+          TopLeft="247.333307405314,456.368416041797">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60.2916641800354,26.3859633196315"
+              Start="0,0"
+              End="60.2916641800354,18.8859633196315">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.19298165981573" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.19298165981573"
+                    Point2="0,13.1929816598157"
+                    Point3="4,13.1929816598157" />
+                  <mssgle:LineSegment
+                    End="56.2916641800354,13.1929816598157" />
+                  <mssgle:CubicBezierSegment
+                    Point1="56.2916641800354,13.1929816598157"
+                    Point2="60.2916641800354,13.1929816598157"
+                    Point3="60.2916641800354,17.1929816598157" />
+                  <mssgle:LineSegment
+                    End="60.2916641800354,18.8859633196315" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="428,580.666666666667"
+          Size="428,624"
+          Id="Package\Data Load"
+          TopLeft="444.875017350538,157.0175425675" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Load\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="142.666666666667,42.6666666666667"
+          Id="Package\Data Load\Data Flow Task\Excel Source"
+          TopLeft="141.874993657693,73.8947360307557" />
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\Data Load\Data Flow Task\Row Count"
+          TopLeft="140.624993713573,293.561401412786" />
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\Data Load\Data Flow Task\OLE DB Destination"
+          TopLeft="141.249993685633,394.859647041846" />
+        <EdgeLayout
+          Id="Package\Data Load\Data Flow Task.Paths[Excel Source Output]"
+          TopLeft="209.9166603523,116.561402697422">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,176.999998715363"
+              Start="0,0"
+              End="0,169.499998715363">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,169.499998715363" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Load\Data Flow Task.Paths[Row Count Output 1]"
+          TopLeft="206.624993713573,336.228068079452">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="21.9583333053937,58.6315789623935"
+              Start="0,0"
+              End="21.9583333053937,51.1315789623935">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.3157894811967" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.3157894811967"
+                    Point2="0,29.3157894811967"
+                    Point3="4,29.3157894811967" />
+                  <mssgle:LineSegment
+                    End="17.9583333053937,29.3157894811967" />
+                  <mssgle:CubicBezierSegment
+                    Point1="17.9583333053937,29.3157894811967"
+                    Point2="21.9583333053937,29.3157894811967"
+                    Point3="21.9583333053937,33.3157894811967" />
+                  <mssgle:LineSegment
+                    End="21.9583333053937,51.1315789623935" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Load\Data Flow Task\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Load\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
